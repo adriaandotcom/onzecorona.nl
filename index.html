@@ -92,6 +92,21 @@
       <h2>Help mee om het inzichtelijk te maken</h2>
       <p><a class="button" href="https://tinyurl.com/coronastatus-nl">Ga naar onze website</a></p>
       <p style="font-size: 12px;">(deze omleiding is nodig omdat we op platformen worden geblokkeerd door overactieve spam filters)</p>
+
+      <script>
+        (function() {
+          var element = document.querySelector('a.button');
+          if (!element) return;
+          var ref = "onzecorona.nl"
+          if (document.referrer) {
+            ref = document.referrer.split('/')[2];
+            if (ref === 't.co' && document.referrer.split('/')[3]) {
+              ref += "/" + document.referrer.split('/')[3].split("?")[0];
+            }
+          }
+          element.href = "https://coronastatus.nl/" + (ref ? ("?ref=" + ref) : "")
+        })();
+      </script>
     </main>
   </body>
 </html>
