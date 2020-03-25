@@ -100,8 +100,8 @@
           var ref = "onzecorona.nl"
           if (document.referrer) {
             ref = document.referrer.split('/')[2];
-            if (ref === 't.co' && document.referrer.split('/')[3]) {
-              ref += "/" + document.referrer.split('/')[3].split("?")[0];
+            if (ref === 't.co') {
+              ref = "twitter.com";
             }
           }
           element.href = "https://coronastatus.nl/" + (ref ? ("?ref=" + ref) : "")
